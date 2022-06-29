@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0-beta1/css/bootstrap.css'>
+  <link rel="stylesheet" href="./css.css">
+  <title>Clock</title>
+
+</head>
+<body>
+  <div class="container">
+    <div id="clock">
+      <div id="hour"></div>
+      <div id="minute"></div>
+      <div id="second"></div>
+      <div class="short">
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+        <section class="clock__indicator"></section>
+      </div>
+    </div>
+  </div>
+
+  <div class="box1">
+    <div class="box2">
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+    </div>
+
+    <div class="box2">
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+    </div>
+
+    <div class="box2">
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+    </div>
+
+    <div class="box2">
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+    </div>
+
+    <div class="box2">
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+      <div class="bling"></div>
+    </div>
+
+  </div>
+
+  
+  <script>
+    const hour = document.getElementById("hour");
+    const minute = document.getElementById("minute");
+    const sec = document.getElementById("second");
+    
+    const setDate = () => {
+        let d = new Date();
+        let h = d.getHours();
+        let m = d.getMinutes();
+        let s = d.getSeconds();
+        hour.style.transform = `rotate( ${h*30+90}deg )`;
+        minute.style.transform = `rotate( ${m*6+90}deg )`;
+        sec.style.transform = `rotate( ${s*6+90}deg )`;
+    }
+    
+    setInterval(setDate, 1000);
+    setDate();
+
+  </script>  
+
+<!-- gsap的程式 -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0-beta1/js/bootstrap.bundle.min.js' i></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js'></script>
+<script src="./gsap/gsap.js"></script>
+<script>
+  gsap.to('.bling', {
+    x: 'random(-100,100,20)',
+    y: 'random(-100,100,20)',
+    ease: 'elastic',
+    duration: 1,
+    repeat: -1,
+    yoyo: true,
+    scale: 0.1, // 縮放
+    rotation: 360,
+    stagger: 0.1, 
+    background: 'rgba(random(0,255), random(0,255), random(0,255), random(0.3,1))',
+    boxShadow: '0px 0px random(30,180,30)px 30px rgba(random(0,255), random(0,255), random(0,255), random(0.5,1))',
+    stagger: {
+      each: 1,
+      from: 'random',
+      grid: 'auto',
+    }
+  })
+
+</script>
+
+
+</body>
+</html>
